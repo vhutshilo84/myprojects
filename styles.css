@@ -1,0 +1,180 @@
+/* Base / Reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5;color:#eaf2ff;background:radial-gradient(900px 500px at 20% 0%, rgba(88,132,255,.18), transparent 60%), radial-gradient(800px 500px at 90% 20%, rgba(0,200,255,.14), transparent 55%), #0b1020}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+
+/* Product thumbnails: keep all images same size */
+.product-thumb{
+  width:450px;
+  height:400px;
+  object-fit:cover;
+  object-position:center;
+}
+
+
+
+
+
+
+/* Layout */
+header,nav,main,footer{max-width:1100px;margin-inline:auto;padding-inline:16px}
+header{padding:28px 16px 12px}
+header h1{margin:0;font-size:clamp(22px,3vw,34px);letter-spacing:.08em}
+
+nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;padding:10px 0 18px}
+nav a{padding:10px 14px;border:1px solid rgba(234,242,255,.18);border-radius:999px;background:rgba(255,255,255,.03);font-weight:600}
+nav a:hover{border-color:rgba(234,242,255,.35);background:rgba(255,255,255,.06);text-decoration:none}
+
+main{padding:6px 0 40px}
+.section{padding:22px 0}
+
+/* Components */
+.section{background:rgba(255,255,255,.02);border:1px solid rgba(234,242,255,.12);border-radius:18px;padding:24px}
+.section h2{margin:0 0 10px;font-size:clamp(20px,2.4vw,28px)}
+.section h3{margin:0 0 10px;font-size:clamp(18px,2vw,22px)}
+.section p{margin:0 0 12px;color:rgba(234,242,255,.82)}
+.section ul{margin:10px 0 0;padding-left:18px;color:rgba(234,242,255,.86)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;border-radius:12px;border:1px solid rgba(234,242,255,.18);background:rgba(255,255,255,.03);font-weight:700;white-space:nowrap}
+.btn:hover{background:rgba(255,255,255,.08)}
+.btn.primary{background:linear-gradient(135deg, rgba(88,132,255,.95), rgba(0,200,255,.85));border-color:rgba(255,255,255,.22)}
+
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+
+
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+.pricing-cell{background:rgba(255,255,255,.02);border:1px solid rgba(234,242,255,.12);border-radius:16px;padding:16px}
+.pricing-cell strong{display:block;margin-bottom:8px}
+.pricing-cell ul{margin:10px 0 0}
+
+/* Footer */
+footer{padding:0 16px 26px}
+footer p{margin:14px 0 0;color:rgba(234,242,255,.68);font-size:.95rem;text-align:center}
+.social{margin-top:14px}
+
+/* Forms */
+input, textarea, button{font:inherit}
+input, textarea{
+  width:100%;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid rgba(216,27,96,.25);
+  background:rgba(255,255,255,.9);
+  margin-top:6px;
+  margin-bottom:10px;
+}
+button, input[type="submit"]{
+  border:none;
+  padding:10px 16px;
+  border-radius:999px;
+  color:white;
+  background:linear-gradient(135deg, var(--primary), var(--primary2));
+  cursor:pointer;
+  box-shadow:0 12px 26px rgba(216,27,96,.2);
+}
+button:hover, input[type="submit"]:hover{filter:brightness(1.03)}
+
+/* Product page helpers */
+html{scroll-behavior:smooth}
+
+/* Back to top */
+#top{
+  position:relative;
+}
+
+.back-to-top{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid rgba(234,242,255,.18);
+  background:rgba(255,255,255,.03);
+  font-weight:700;
+}
+.back-to-top:hover{
+  background:rgba(255,255,255,.08);
+  text-decoration:none;
+}
+
+.jump-to-enquiry{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid rgba(216,27,96,.25);
+  background:rgba(255,255,255,.85);
+}
+.jump-to-enquiry:hover{
+  text-decoration:none;
+  background:rgba(216,27,96,.09);
+}
+
+
+/* Index background image */
+.page-bg{
+  position:fixed;
+  inset:0;
+  background-image:url("../asset/art1.jpeg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:.35;
+  z-index:-1;
+}
+
+/* About page background override */
+.about-bg{
+  background-image:url("../asset/art3.jpeg");
+}
+
+/* Features page background image */
+#features{
+  background-image:url("../asset/art4.jpeg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  min-height:calc(100vh - 220px);
+}
+
+
+.page-content{
+  position:relative;
+  z-index:1;
+}
+
+
+/* Index video */
+section.video video{
+  width:600px;
+  height:500px;
+  display:block;
+  margin:0 auto;
+  object-fit:contain;
+}
+
+
+
+@media (max-width: 600px){
+  section.video video{
+    max-width:100%;
+    width:100%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 760px){
+
+  header{padding-top:20px}
+  .grid-2{grid-template-columns:1fr}
+  .section{padding:18px}
+  nav a{padding:9px 12px}
+}
+
+/* Responsive */
+@media (max-width: 600px){
+  h1{font-size:1.5rem}
+  nav a{padding:9px 12px}
+}
+
+
